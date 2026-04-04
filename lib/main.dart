@@ -13,6 +13,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.amber[100],
+        appBar: AppBar(
+          title: Text("Welcome", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
+          backgroundColor: Colors.brown[400],
+          elevation: 0,
+          leading: Icon(Icons.menu),
+          actions: [
+            IconButton(onPressed: () {}, icon: Icon(Icons.monetization_on))
+          ],
+        ),
         body: Center(
           child: Container(
             height: 300,

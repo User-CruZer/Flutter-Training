@@ -17,8 +17,13 @@ class MyApp extends StatelessWidget {
           child: Container(
             height: 300,
             width: 300,
-            color: Colors.white,
-            child: Text("Hello There"),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              // Curve the corners a bit
+              borderRadius: BorderRadius.circular(35)
+            ),
+            padding: EdgeInsets.all(50),
+            child: Icon(Icons.discord, color: Colors.blueAccent, size: 102,),
           ),
         ),
       ),

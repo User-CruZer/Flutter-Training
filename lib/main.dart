@@ -12,28 +12,39 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.amber[100],
         appBar: AppBar(
-          title: Text("Welcome", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
-          backgroundColor: Colors.brown[400],
+          title: Text("Welcome", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),),
+          backgroundColor: Colors.black,
           elevation: 0,
-          leading: Icon(Icons.menu),
+          leading: Icon(Icons.menu, color: Colors.white,),
           actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.monetization_on))
+            IconButton(onPressed: () {}, icon: Icon(Icons.monetization_on, color: Colors.white,))
           ],
         ),
-        body: Center(
-          child: Container(
-            height: 300,
-            width: 300,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              // Curve the corners a bit
-              borderRadius: BorderRadius.circular(35)
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // 1st Row
+            Expanded(
+              child: Container(
+                color: Colors.orange[100],
+              ),
             ),
-            padding: EdgeInsets.all(50),
-            child: Icon(Icons.discord, color: Colors.blueAccent, size: 102,),
-          ),
+
+            // 2nd Row
+            Expanded(
+              flex: 3,
+              child: Container(
+                color: Colors.orange[300],
+              ),
+            ),
+            // 3rd Row
+            Expanded(
+              child: Container(
+                color: Colors.orange[500],
+              ),
+            )
+          ],
         ),
       ),
     );

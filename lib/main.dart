@@ -24,24 +24,27 @@ class MyApp extends StatelessWidget {
         ),
         body: ListView(
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          scrollDirection: Axis.horizontal,
+          // scrollDirection: Axis.horizontal,
           children: [
             // 1st Row
             Container(
-              width: 350,
+              height: 350,
               color: Colors.orange[100],
+              child: Icon(Icons.discord, size: 130, color: Colors.blue, shadows: [BoxShadow(color: Colors.black, offset: Offset(2, 2), blurRadius: 4)],),
             ),
 
             // 2nd Row
             Container(
-              width: 350,
+              height: 350,
               color: Colors.orange[300],
+              child: Icon(Icons.facebook, size: 130, color: Colors.blue, shadows: [BoxShadow(color: Colors.black, offset: Offset(2, 2), blurRadius: 4)],),
             ),
 
             // 3rd Row
             Container(
-              width: 350,
+              height: 350,
               color: Colors.orange[500],
+              child: Icon(Icons.tiktok, size: 130, color: Colors.black, shadows: [BoxShadow(color: Colors.black, offset: Offset(2, 2), blurRadius: 4)],),
             )
           ],
         ),

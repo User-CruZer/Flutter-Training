@@ -30,21 +30,39 @@ class MyApp extends StatelessWidget {
             Container(
               height: 350,
               color: Colors.orange[100],
-              child: Icon(Icons.discord, size: 130, color: Colors.blue, shadows: [BoxShadow(color: Colors.black, offset: Offset(2, 2), blurRadius: 4)],),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.discord, size: 130, color: Colors.blue, shadows: [BoxShadow(color: Colors.black, offset: Offset(2, 2), blurRadius: 4)],),
+                  Text("Discord", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),),
+                ],
+              ),
             ),
 
             // 2nd Row
             Container(
               height: 350,
               color: Colors.orange[300],
-              child: Icon(Icons.facebook, size: 130, color: Colors.blue, shadows: [BoxShadow(color: Colors.black, offset: Offset(2, 2), blurRadius: 4)],),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.facebook, size: 130, color: Colors.blue, shadows: [BoxShadow(color: Colors.black, offset: Offset(2, 2), blurRadius: 4)],),
+                  Text("Facebook", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),)
+                ],
+              ),
             ),
 
             // 3rd Row
             Container(
               height: 350,
               color: Colors.orange[500],
-              child: Icon(Icons.tiktok, size: 130, color: Colors.black, shadows: [BoxShadow(color: Colors.black, offset: Offset(2, 2), blurRadius: 4)],),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.tiktok, size: 130, color: Colors.black, shadows: [BoxShadow(color: Colors.black, offset: Offset(2, 2), blurRadius: 4)],),
+                  Text("TikTok", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),)
+                ],
+              ),
             )
           ],
         ),

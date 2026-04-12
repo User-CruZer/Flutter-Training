@@ -17,6 +17,56 @@ class FirstPages extends StatelessWidget {
           Navigator.pushNamed(context, "/second");
         },
       )),
+      drawer: Drawer(
+        backgroundColor: Colors.blueAccent,
+        child: Column(
+          children: [
+            // Common Place for Drawer Header
+            DrawerHeader(child: Icon(
+                Icons.account_box,
+                size: 100, color: Colors.white,
+              ),
+            ),
+            // List of Drawer Items
+
+            // Home ListTile
+            ListTile(
+              leading: Icon(  
+                Icons.home,
+                color: Colors.white,
+                size: 30,
+              ),
+              title: Text("H O M E", style: TextStyle(color: Colors.white)
+              ),
+              onTap: () {
+                // Go To Home Page
+                Navigator.pop(context); // Close the drawer
+
+                Navigator.pushNamed(context, "/homepage");
+              },
+            ),
+
+            // Settings ListTile
+            ListTile(
+              leading: Icon(  
+                Icons.settings,
+                color: Colors.white,
+                size: 30,
+              ),
+              title: Text("S E T T I N G S", style: TextStyle(color: Colors.white)
+              ),
+              onTap: () {
+                // Go To Settings Page
+                Navigator.pop(context); // Close the drawer
+
+                Navigator.pushNamed(context, "/settings");
+              },
+            ),
+
+
+          ],
+        ),
+      ),
     );
   }
 }

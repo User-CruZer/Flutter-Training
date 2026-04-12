@@ -9,6 +9,10 @@ class MyApp extends StatelessWidget {
 
   List names = ["John", "Jane", "Doe", "Smith", "Alice", "Bob", "Charlie", "David", "Eve", "Frank"];
 
+  void userTapped() {
+    print("User tapped the container!");
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,9 +30,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: GestureDetector(
-            onTap: () {
-              print("Container tapped!");
-              },
+            onTap: userTapped,
               // On tap, user tapped the container
             child: Container(
               height: 300,

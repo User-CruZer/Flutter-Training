@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Pages/Second_Pages.dart';
 
 class FirstPages extends StatelessWidget {
   const FirstPages({super.key});
@@ -15,7 +14,7 @@ class FirstPages extends StatelessWidget {
         style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
         child: Text("Go To The Second Page", style: TextStyle(color: Colors.white),),
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPages()));
+          Navigator.pushNamed(context, "/second");
         },
       )),
     );

@@ -1,93 +1,63 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Pages/HomePage.dart';
+import 'package:flutter_application_1/Pages/SettingsPage.dart';
+import 'package:flutter_application_1/Pages/Profile_page.dart';
 
-class FirstPages extends StatelessWidget {
-  const FirstPages({super.key});
+class FirstPages extends StatefulWidget {
+  FirstPages({super.key});
+
+  @override
+  State<FirstPages> createState() => _FirstPagesState();
+}
+
+class _FirstPagesState extends State<FirstPages> {
+  // current index for the bottom navigation bar
+  int _currentIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _currentIndex = index; // Update the current index
+    });
+  }
+
+  final List _pages = [
+    // Homepage
+    Homepage(),
+
+    // Profile 
+    ProfilePage(),
+
+    // Settings 
+    Settingspage(),
+    ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text("First Page", style: TextStyle(color: Colors.white),),
-        ),
-      body: Column(
-        children: [
-          ListView(
-            shrinkWrap: true,
-            children: [
-              ListTile(
-                onTap: () {
-                  Navigator.pushNamed(context, "/homepage");
-                },
-                leading: Icon(Icons.home, color: Colors.blue,),
-                title: Text("Home"),
-              ),
-              ListTile(
-                onTap: () {
-                  Navigator.pushNamed(context, "/settings");
-                },
-                leading: Icon(Icons.settings, color: Colors.blue,),
-                title: Text("Settings"),
-              ),
-            ],
+        title: Text("First Page", style: TextStyle(color: Colors.white)),),
+      body: _pages[_currentIndex], // Display the current page
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: _onItemTapped,
+        // backgroundColor: Colors.blue,
+        items: [
+          // Home
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+
+          // profile
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_box),
+            label: "Profile",
           ),
-          Center(child: ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-            child: Text("Go To The Second Page", style: TextStyle(color: Colors.white),),
-            onPressed: () {
-              Navigator.pushNamed(context, "/second");
-            },
-          ))
+
+          // settings
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: "Settings",
+          ),
         ],
-      ),
-      
-      drawer: Drawer(
-        backgroundColor: Colors.blueAccent,
-        child: Column(
-          children: [
-            // Common Place for Drawer Header
-            DrawerHeader(child: Icon(
-                Icons.account_box,
-                size: 100, color: Colors.white,
-              ),
-            ),
-            // List of Drawer Items
-
-            // Home ListTile
-            ListTile(
-              leading: Icon(  
-                Icons.home,
-                color: Colors.white,
-                size: 30,
-              ),
-              title: Text("H O M E", style: TextStyle(color: Colors.white)
-              ),
-              onTap: () {
-                // Go To Home Page
-                Navigator.pop(context); // Close the drawer
-
-                Navigator.pushNamed(context, "/homepage");
-              },
-            ),
-
-            // Settings ListTile
-            ListTile(
-              leading: Icon(  
-                Icons.settings,
-                color: Colors.white,
-                size: 30,
-              ),
-              title: Text("S E T T I N G S", style: TextStyle(color: Colors.white)
-              ),
-              onTap: () {
-                // Go To Settings Page
-                Navigator.pop(context); // Close the drawer
-
-                Navigator.pushNamed(context, "/settings");
-              },
-            ),
-          ],
-        ),
       ),
     );
   }

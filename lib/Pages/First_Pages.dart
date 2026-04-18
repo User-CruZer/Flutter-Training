@@ -10,13 +10,37 @@ class FirstPages extends StatelessWidget {
         backgroundColor: Colors.blue,
         title: Text("First Page", style: TextStyle(color: Colors.white),),
         ),
-      body: Center(child: ElevatedButton(
-        style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-        child: Text("Go To The Second Page", style: TextStyle(color: Colors.white),),
-        onPressed: () {
-          Navigator.pushNamed(context, "/second");
-        },
-      )),
+      body: Column(
+        children: [
+          ListView(
+            shrinkWrap: true,
+            children: [
+              ListTile(
+                onTap: () {
+                  Navigator.pushNamed(context, "/homepage");
+                },
+                leading: Icon(Icons.home, color: Colors.blue,),
+                title: Text("Home"),
+              ),
+              ListTile(
+                onTap: () {
+                  Navigator.pushNamed(context, "/settings");
+                },
+                leading: Icon(Icons.settings, color: Colors.blue,),
+                title: Text("Settings"),
+              ),
+            ],
+          ),
+          Center(child: ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+            child: Text("Go To The Second Page", style: TextStyle(color: Colors.white),),
+            onPressed: () {
+              Navigator.pushNamed(context, "/second");
+            },
+          ))
+        ],
+      ),
+      
       drawer: Drawer(
         backgroundColor: Colors.blueAccent,
         child: Column(
@@ -62,8 +86,6 @@ class FirstPages extends StatelessWidget {
                 Navigator.pushNamed(context, "/settings");
               },
             ),
-
-
           ],
         ),
       ),
